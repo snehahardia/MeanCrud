@@ -1,0 +1,23 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+<form [formGroup]="updateListForm"
+(ngSubmit)="updateList(updateListForm.value)">
+  <div class="form-group">
+    <label>Id:</label>
+    <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span><strong>{{listid}}</strong>
+    </div>
+  </div>
+  <div class="form-group">
+    <label>Title:</label>
+    <input type="text" class="form-control" name="title" formControlName="title">
+  </div>
+  <div class="form-group">
+    <label>Description:</label>
+    <input type="text" class="form-control" name="description" formControlName="description">
+  </div>
+  <button type="submit" class="btn btn-default" mat-raised-button (click)="dialogRef.close()">Update</button>
+</form>
